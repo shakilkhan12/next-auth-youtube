@@ -32,6 +32,7 @@ export default NextAuth({
     session: {
       strategy: 'database'
     },
+    secret: process.env.SECRET,
     providers: [
         CredentialsProvider({
           name: 'Credentials',
