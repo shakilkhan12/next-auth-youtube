@@ -9,19 +9,19 @@ import NextAuth from "next-auth"
 import { FirebaseAdapter } from "@next-auth/firebase-adapter"
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from "../lib/mongodb"
-import { initializeApp, getApp, getApps } from "firebase/app";
-import {getFirestore, collection, query, getDocs, where, limit, doc, getDoc, addDoc, updateDoc, deleteDoc, runTransaction} from "firebase/firestore"
+// import { initializeApp, getApp, getApps } from "firebase/app";
+// import {getFirestore, collection, query, getDocs, where, limit, doc, getDoc, addDoc, updateDoc, deleteDoc, runTransaction} from "firebase/firestore"
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAtWklwtrk8GCBk6Q_-uXCF0L73gnEUJIk",
-    authDomain: "next-auth-tuts-e81d5.firebaseapp.com",
-    projectId: "next-auth-tuts-e81d5",
-    storageBucket: "next-auth-tuts-e81d5.appspot.com",
-    messagingSenderId: "216745192140",
-    appId: "1:216745192140:web:8fae986f1386dd3a69f069"
-  };
-  const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-  const db = getFirestore();
+// const firebaseConfig = {
+//     apiKey: "AIzaSyAtWklwtrk8GCBk6Q_-uXCF0L73gnEUJIk",
+//     authDomain: "next-auth-tuts-e81d5.firebaseapp.com",
+//     projectId: "next-auth-tuts-e81d5",
+//     storageBucket: "next-auth-tuts-e81d5.appspot.com",
+//     messagingSenderId: "216745192140",
+//     appId: "1:216745192140:web:8fae986f1386dd3a69f069"
+//   };
+//   const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+//   const db = getFirestore();
 
 export default NextAuth({
   adapter: MongoDBAdapter(clientPromise),
